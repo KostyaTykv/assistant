@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}{{ survey.title }}{% endblock %}
+{% block body_class %}page-survey{% endblock %}
+{% block content %}
+<section class="survey-head">
+  <div class="breadcrumbs">
+    <a href="/" class="crumb">Главная</a>
+    <span class="crumb-sep">/</span>
+    <span class="crumb">{{ survey.title }}</span>
+  </div>
+
+  <h1 class="h1">{{ survey.title }}</h1>
+  <p class="lead">{{ survey.description }}</p>
+</section>
+
+<section class="panel" id="panel"
+  data-survey-key="{{ survey.key }}"
+  data-start-qid="{{ survey.start_qid }}">
+
+  <!-- QUESTION CARD -->
+  <div class="qcard" id="qCard">
+    <div class="qstack">
+      <div class="qtitle" id="qTitle">Загрузка…</div>
+
+      <div class="qtext" id="qText"></div>
+      <div class="qlong muted" id="qLong"></div>
+
+      <details class="hint hint--icon hidden" id="hintBox">
+        <summary class="hint__summary" aria-label="Подсказка" title="Подсказка">?</summary>
+        <div class="hint__body" id="qHints"></div>
+      </details>
+    </div>
+
+    <form class="options" id="form">
+      <div id="inputs"></div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn--primary" id="nextBtn" disabled>Далее</button>
+        <button type="button" class="btn btn--ghost" id="restartBtn">Начать заново</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- RESULT CARD -->
+  <div class="result hidden" id="resultBox">
+    <div class="qcard">
+      <div class="qtitle" id="finalTitle"></div>
+      <div class="qtext" id="finalText"></div>
+
+      <div class="actions">
+        <a class="btn btn--primary" href="/">К выбору опросников</a>
+        <button class="btn btn--ghost" type="button" id="copyBtn">Скопировать результат</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/app.js"></script>
+{% endblock %}

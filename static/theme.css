@@ -1,0 +1,23 @@
+:root{
+  /* Base */
+  --bg: #ffffff;
+  --text: rgba(17,24,39,0.92);
+  --muted: rgba(17,24,39,0.62);
+  --line: rgba(17,24,39,0.10);
+
+  /* Glass panels */
+  --panel: rgba(255,255,255,0.58);
+  --panel2: rgba(255,255,255,0.72);
+
+  /* Accent */
+  --accent: #ff6b5a;    /* коралл */
+  --accent2: #111827;   /* тёмный */
+
+  /* Shadow + radius */
+  --shadow: 0 16px 40px rgba(17,24,39,0.10);
+  --radius: 18px;
+  --radius2: 26px;
+
+  /* Container width оставь как было */
+  --max: 1100px;
+}

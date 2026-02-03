@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Выбор опросника{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1 class="h1">Выберите опросник</h1>
+  <p class="lead">Тут можно добавить описание</p>
+</section>
+
+<section class="grid">
+  {% for s in surveys %}
+  <a class="card card--clickable" href="/s/{{ s.key }}">
+    <div class="card__head">
+      <div class="card__title">{{ s.title }}</div>
+    </div>
+    <div class="card__body">
+      <p class="card__desc">{{ s.description }}</p>
+    </div>
+    <div class="card__foot">
+      <span class="link">Открыть →</span>
+    </div>
+  </a>
+  {% endfor %}
+</section>
+{% endblock %}

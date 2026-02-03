@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Legal assistant{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/theme.css" />
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <div class="bg">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="/">Legal assistant</a>
+      </div>
+    </header>
+
+    <main class="container main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <!-- <span>© Survey App</span> -->
+      </div>
+    </footer>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
